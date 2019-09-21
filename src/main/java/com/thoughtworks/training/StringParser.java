@@ -7,7 +7,8 @@ public class StringParser {
         this.inputString = inputString;
     }
 
-    char parser() {
-        return 'a';
+    char[] parser() {
+        char[] stringToCharArray=inputString.toCharArray();
+        return stringToCharArray;
     }
 }
