@@ -2,10 +2,14 @@ package com.thoughtworks.training;
 
 import lombok.AllArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 @AllArgsConstructor
 public class Iterative {
     char[] charArray;
-    String iterativeArrange[];
+    List<String> iterativeArrange=new ArrayList<String>();
     char[] newCharArray;
     Permutation permutation;
 
@@ -16,16 +20,16 @@ public class Iterative {
     String simpleString = "";
 
     void arrange() {
+        System.out.println(1);
         newCharArray = charArray;
         for (int i = 0; i < newCharArray.length; i++) {
             this.swap(i);
         }
-        for(String str:this.iterativeArrange){
-            System.out.println(str);
-        }
+        print();
     }
 
-    String[] swap(int i) {
+    void swap(int i) {
+        System.out.println(2);
         for (int j = 0; j < newCharArray.length; j++) {
 
             if (i != j) {
@@ -34,23 +38,30 @@ public class Iterative {
                 newCharArray[j] = temp;
 
                 simpleString = String.copyValueOf(newCharArray);
-            }
-            iterativeArrange = new String[]{simpleString};
-        }
-        return iterativeArrange; 
-    }
+                //this.iterativeArrange = new String[]{simpleString};
+                System.out.println("iterativeArrange"+simpleString);
+                iterativeArrange.add(simpleString);
+               // print(iterativeArrange);
 
-    void print(String[] iterativeArrange) {
-        for(String str:this.iterativeArrange){
-            System.out.println(str);
+               //permutation.iterativeArrange(this.iterativeArrange);
+            }
+
+        }
+
+    }
+    void print() {
+        Iterator i = iterativeArrange.iterator();
+        System.out.println("The ArrayList elements are:");
+        while (i.hasNext()) {
+            System.out.println(i.next());
         }
     }
 
     public static void main(String args[]) {
-        char[] ar= {'a','b','c'};
-        Iterative i=new Iterative(ar);
+        char[] ar = {'a', 'b', 'c'};
+        Iterative i = new Iterative(ar);
         i.arrange();
-
-
     }
+
 }
+
