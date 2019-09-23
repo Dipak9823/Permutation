@@ -50,5 +50,7 @@ public class Iterative {
         char[] ar= {'a','b','c'};
         Iterative i=new Iterative(ar);
         i.arrange();
+
+
     }
 }
