@@ -13,6 +13,11 @@ public class Iterative {
 
     public List<String> arrange() {
         newCharArray=charArray;
+        if(newCharArray.length==1) {
+            String str =String.valueOf(newCharArray);
+            list.add(str);
+            return list;
+        }
         for(int index=0;index<newCharArray.length;index++) {
             swap(index);
         }

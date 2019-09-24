@@ -1,7 +1,6 @@
 package com.thoughtworks.training;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -21,8 +20,8 @@ public class IterativeTest {
     @Test
     void givenTwoCharArray_WhenPermute_ThenReturnList() {
         List<String> l=new ArrayList<String>();
-        l.add("ab");
         l.add("ba");
+        l.add("ab");
         char[] charArray={'a','b'};
         Iterative iterative=new Iterative(charArray);
         Assertions.assertEquals(l,iterative.arrange());
