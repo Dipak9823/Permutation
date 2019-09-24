@@ -11,14 +11,23 @@ public class Recursion {
         this.charArray = charArray;
     }
 
-    public List<String> permute() {
-        if (charArray.length == 1) {
-            recursiveArrange.add("a");
-            return recursiveArrange;
+    public List<String> permute(int startIndex, int endIndex) {
+        if (startIndex == endIndex) {
+            recursiveArrange.add(String.valueOf(charArray));
         }
-        recursiveArrange.add("aa");
-        recursiveArrange.add("aa");
+        for (int count = startIndex; count <= endIndex; count++) {
+            swap(startIndex, count);
+            permute(startIndex + 1, endIndex);
+            swap(startIndex, count);
+        }
         return recursiveArrange;
+    }
+    public void swap(int startIndex, int count) {
+        char temp;
+        temp = charArray[startIndex];
+        charArray[startIndex] = charArray[count];
+        charArray[count] = temp;
+        String.valueOf(charArray);
     }
 }
 

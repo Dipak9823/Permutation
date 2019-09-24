@@ -15,7 +15,7 @@ public class RecursionTest {
         List<String> recursiveArrangeOutput = new ArrayList<>();
         recursiveArrangeOutput.add("a");
         Recursion recursion = new Recursion(charArray);
-        assertEquals(recursiveArrangeOutput, recursion.permute());
+        assertEquals(recursiveArrangeOutput, recursion.permute(0,charArray.length-1));
     }
 
     @Test
@@ -25,6 +25,16 @@ public class RecursionTest {
         recursiveArrangeOutput.add("aa");
         recursiveArrangeOutput.add("aa");
         Recursion recursion = new Recursion(charArray);
-        assertEquals(recursiveArrangeOutput, recursion.permute());
+        assertEquals(recursiveArrangeOutput, recursion.permute(0,charArray.length-1));
+    }
+
+    @Test
+    void givenArrayWithTwoChar_ab_WhenPermute_ThenReturnChar_ab() {
+        char[] charArray = {'a', 'b'};
+        List<String> recursiveArrangeOutput = new ArrayList<>();
+        recursiveArrangeOutput.add("ab");
+        recursiveArrangeOutput.add("ba");
+        Recursion recursion = new Recursion(charArray);
+        assertEquals(recursiveArrangeOutput, recursion.permute(0, charArray.length - 1));
     }
 }
