@@ -17,4 +17,14 @@ public class RecursionTest {
         Recursion recursion = new Recursion(charArray);
         assertEquals(recursiveArrangeOutput, recursion.permute());
     }
+
+    @Test
+    void givenArrayWithTwoChar_a_WhenPermute_ThenReturnChar_aa() {
+        char[] charArray = {'a', 'a'};
+        List<String> recursiveArrangeOutput = new ArrayList<>();
+        recursiveArrangeOutput.add("aa");
+        recursiveArrangeOutput.add("aa");
+        Recursion recursion = new Recursion(charArray);
+        assertEquals(recursiveArrangeOutput, recursion.permute());
+    }
 }
